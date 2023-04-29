@@ -1009,7 +1009,7 @@ class Pipeline(_ScikitCompat):
             if version.parse(version.parse(torch.__version__).base_version) >= version.parse("1.9.0")
             else torch.no_grad
         )
-        return inference_context
+        return torch.no_grad
 
     def forward(self, model_inputs, **forward_params):
         with self.device_placement():
